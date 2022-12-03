@@ -1,4 +1,4 @@
-add_library(day-1
+add_library(day-1 OBJECT
 	puzzle.cpp
 	puzzle.h
 )
