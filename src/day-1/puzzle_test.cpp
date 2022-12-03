@@ -14,6 +14,11 @@ protected:
 		input      = std::make_unique<std::ifstream>(fname, std::ios::in);
 	}
 
+	void SetUp() override {
+		input->clear();
+		input->seekg(0, std::ios::beg);
+	}
+
 	static std::unique_ptr<std::ifstream> input;
 };
 
@@ -22,4 +27,9 @@ std::unique_ptr<std::ifstream> PuzzleTest::input = nullptr;
 TEST_F(PuzzleTest, most_calories) {
 	auto actual = aoc::most_calories(*PuzzleTest::input);
 	EXPECT_EQ(66186, actual);
+}
+
+TEST_F(PuzzleTest, total_top3) {
+	auto actual = aoc::total_topn(*PuzzleTest::input, 3);
+	EXPECT_EQ(196804, actual);
 }
