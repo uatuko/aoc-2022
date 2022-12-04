@@ -28,3 +28,8 @@ TEST_F(PuzzleTest, priority_total) {
 	auto actual = aoc::priority_total(*PuzzleTest::input);
 	EXPECT_EQ(8493, actual);
 }
+
+TEST_F(PuzzleTest, group_priority_total) {
+	auto actual = aoc::group_priority_total(*PuzzleTest::input);
+	EXPECT_EQ(2552, actual);
+}
