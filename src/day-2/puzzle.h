@@ -1,7 +1,6 @@
 #pragma once
 
 #include <istream>
-#include <vector>
 
 namespace aoc {
 unsigned long strategy_score(std::istream &input);
