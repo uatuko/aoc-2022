@@ -28,3 +28,8 @@ TEST_F(PuzzleTest, part_1) {
 	auto actual = aoc::part_1(*PuzzleTest::input);
 	EXPECT_EQ(456, actual);
 }
+
+TEST_F(PuzzleTest, part_2) {
+	auto actual = aoc::part_2(*PuzzleTest::input);
+	EXPECT_EQ(808, actual);
+}
