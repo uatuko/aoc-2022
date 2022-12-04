@@ -4,7 +4,5 @@
 #include <vector>
 
 namespace aoc {
-unsigned long strategy_score(std::istream &input);
-
-std::vector<unsigned short> strategy_scores(std::istream &input);
+unsigned long strategy_score_predicted(std::istream &input);
 } // namespace aoc

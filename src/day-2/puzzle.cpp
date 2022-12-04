@@ -1,15 +1,8 @@
 #include "puzzle.h"
 
-#include <numeric>
-
 namespace aoc {
-unsigned long strategy_score(std::istream &input) {
-	auto scores = strategy_scores(input);
-	return std::accumulate(scores.begin(), scores.end(), 0);
-}
-
-std::vector<unsigned short> strategy_scores(std::istream &input) {
-	std::vector<unsigned short> scores;
+unsigned long strategy_score_predicted(std::istream &input) {
+	unsigned long total = 0;
 
 	unsigned short score = 0;
 	for (std::string line; std::getline(input, line); score = 0) {
@@ -37,9 +30,9 @@ std::vector<unsigned short> strategy_scores(std::istream &input) {
 			break;
 		}
 
-		scores.push_back(score);
+		total += score;
 	}
 
-	return scores;
+	return total;
 }
 } // namespace aoc

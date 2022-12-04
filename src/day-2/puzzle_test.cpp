@@ -24,7 +24,7 @@ protected:
 
 std::unique_ptr<std::ifstream> PuzzleTest::input = nullptr;
 
-TEST_F(PuzzleTest, strategy_score) {
-	auto actual = aoc::strategy_score(*PuzzleTest::input);
+TEST_F(PuzzleTest, strategy_score_predicted) {
+	auto actual = aoc::strategy_score_predicted(*PuzzleTest::input);
 	EXPECT_EQ(8890, actual);
 }
