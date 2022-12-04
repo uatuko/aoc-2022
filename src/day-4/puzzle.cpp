@@ -24,8 +24,8 @@ unsigned long part_1(std::istream &input) {
 			continue;
 		}
 
-		left =
-			std::make_pair(std::stoi(pair.first.substr(0, n)), std::stoi(pair.first.substr(n + 1)));
+		left = std::make_pair(
+			std::stoi(pair.first.substr(0, n)), std::stoi(pair.first.substr(n + 1)));
 
 		n = pair.second.find("-");
 		if (n == std::string::npos) {
@@ -64,8 +64,8 @@ unsigned long part_2(std::istream &input) {
 			continue;
 		}
 
-		left =
-			std::make_pair(std::stoi(pair.first.substr(0, n)), std::stoi(pair.first.substr(n + 1)));
+		left = std::make_pair(
+			std::stoi(pair.first.substr(0, n)), std::stoi(pair.first.substr(n + 1)));
 
 		n = pair.second.find("-");
 		if (n == std::string::npos) {
