@@ -38,7 +38,7 @@ std::string part_1(std::istream &input) {
 	}
 
 	std::string result;
-	for (const auto &stack: stacks) {
+	for (const auto &stack : stacks) {
 		result += stack.top();
 	}
 
