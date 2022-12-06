@@ -26,4 +26,27 @@ unsigned long part_1(std::istream &input) {
 
 	return result;
 }
+
+unsigned long part_2(std::istream &input) {
+	std::string data;
+	std::getline(input, data);
+
+	unsigned long  result = 0;
+	std::set<char> marker;
+	for (unsigned long pos = 0; pos < data.size(); pos++) {
+		for (char c : data.substr(pos, 14)) {
+			marker.insert(c);
+		}
+
+		if (marker.size() == 14) {
+			// Found start of message marker
+			result = pos + 14;
+			break;
+		}
+
+		marker.clear();
+	}
+
+	return result;
+}
 } // namespace aoc
