@@ -5,6 +5,7 @@ add_subdirectory(day-4)
 add_subdirectory(day-5)
 add_subdirectory(day-6)
 add_subdirectory(day-7)
+add_subdirectory(day-8)
 
 # main
 add_executable(${PROJECT_NAME}
