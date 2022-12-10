@@ -100,4 +100,67 @@ unsigned long part_1(std::istream &input) {
 
 	return visible.size();
 }
+
+unsigned long part_2(std::istream &input) {
+	std::set<unsigned long>  scores;
+	std::vector<std::string> grid;
+
+	for (std::string line; std::getline(input, line);) {
+		grid.push_back(line);
+	}
+
+	unsigned long score;
+	int           pos;
+	for (auto y = 0; y < grid.size(); y++) {
+		for (auto x = 0, score = 1; x < grid[y].size(); x++, score = 1) {
+			for (pos = x + 1; pos < grid[y].size(); pos++) {
+				if (grid[y][pos] >= grid[y][x]) {
+					break;
+				}
+			}
+
+			if (pos == grid[y].size()) {
+				pos--;
+			}
+			score *= (pos - x); // right
+
+			for (pos = y + 1; pos < grid.size(); pos++) {
+				if (grid[pos][x] >= grid[y][x]) {
+					break;
+				}
+			}
+
+			if (pos == grid.size()) {
+				pos--;
+			}
+			score *= (pos - y); // bottom
+
+			for (pos = x - 1; pos >= 0; pos--) {
+				if (grid[y][pos] >= grid[y][x]) {
+					break;
+				}
+			}
+
+			if (pos < 0) {
+				pos = 0;
+			}
+			score *= (x - pos); // left
+
+			for (pos = y - 1; pos >= 0; pos--) {
+				if (grid[pos][x] >= grid[y][x]) {
+					break;
+				}
+			}
+
+			if (pos < 0) {
+				pos = 0;
+			}
+			score *= (y - pos); // top
+
+			scores.insert(score);
+		}
+	}
+
+	return *scores.rbegin();
+}
 } // namespace aoc
